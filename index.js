@@ -1,3 +1,4 @@
+//Declared Variables
 const fs = require("fs");
 const inquirer = require("inquirer");
 const util = require("util");
@@ -101,19 +102,16 @@ Any questions, Please visit addtional pages:
 ${answers.Email}
 
 `;
-console.log(README)
+//console.log(README)
+
+// function to write README file
+await writeFileAsync("README2.md",README);
 }
 genrateReadMe();
 
 
-// function to write README file
-function generateMarkdown(answer) {
-    return `# ${answer.title}
 
 
-`;
-    
-}
 
 
 // function to initialize program

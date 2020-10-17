@@ -59,6 +59,8 @@ async function genrateReadMe(){
         name: "Email",
     },
     ];
+
+    // function to write README file
 const answers = await inquirer.prompt(questions);
 //console.log(answers)
 
@@ -67,13 +69,13 @@ const README = `
 
 #Table of Contents
 
--[Description](#Description)
--[Installation](#Installation)
--[Usage](#Usage)
--[Contribution](#Contribution)
--[Test](#Test)
--[License](#License)
--[Questions](#Questions)
+-[Description]
+-[Installation]
+-[Usage]
+-[Contribution]
+-[Test]
+-[License]
+-[Questions]
 
 ##Description:
 ${answers.Description}
@@ -104,19 +106,8 @@ ${answers.Email}
 `;
 //console.log(README)
 
-// function to write README file
+// function to initialize program
 await writeFileAsync("README2.md",README);
 }
+// function to call
 genrateReadMe();
-
-
-
-
-
-
-// function to initialize program
-async function init() {
-} 
-
-// function call to initialize program
-init();

@@ -29,7 +29,7 @@ async function genrateReadMe(){
     {
         type: "input",
         message: "Who contributed to this project?",
-        name: "Contributing",
+        name: "Contribution",
     },
     {
         type: "input",
@@ -59,7 +59,49 @@ async function genrateReadMe(){
     },
     ];
 const answers = await inquirer.prompt(questions);
-console.log(answers)
+//console.log(answers)
+
+const README = `
+# ${answers.Title}
+
+#Table of Contents
+
+-[Description](#Description)
+-[Installation](#Installation)
+-[Usage](#Usage)
+-[Contribution](#Contribution)
+-[Test](#Test)
+-[License](#License)
+-[Questions](#Questions)
+
+##Description:
+${answers.Description}
+
+##Installation:
+${answers.Installation}
+
+##Usage:
+${answers.Usage}
+
+##Contribution:
+${answers.Contribution}
+
+##Test:
+${answers.Test}
+
+##License:
+${answers.License}
+
+##Questions:
+Any questions, Please visit addtional pages:
+##Github Username:
+(https://github.com/${answers.Username})
+
+##Email:
+${answers.Email}
+
+`;
+console.log(README)
 }
 genrateReadMe();
 

@@ -1,7 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const util = require("util");
-
 const writeFileAsync = util.promisify(fs.writeFile);
 // array of questions for user
 
@@ -23,23 +22,26 @@ inquirer.prompt([
     },
     {
         type: "input",
-        message: "",
+        message: "How would you use this project?",
         name: "Usage",
     },
     {
         type: "input",
-        message: "",
+        message: "Who contributed to this project?",
         name: "Contributing",
     },
     {
         type: "input",
-        message: "",
+        message: "How would you test this project?",
         name: "Tests",
     },
     {
-        type: "input",
-        message: "",
-        name: "",
+        type: "list",
+        message: "Select License",
+        name: "License",
+        choices: [
+            
+        ]
     },
     {
         type: "input",
@@ -52,18 +54,28 @@ inquirer.prompt([
         name: "Email",
     },
 ])
-    .then(function (answers) {
-        console.log(answers);
-    })
+
 
 
 // function to write README file
-function generateReadMe(answers) {
+function generateMarkdown(answer) {
+    return `# ${answer.title}
+
+
+`;
 }
 
-// function to initialize program
-function init() {
 
+// function to initialize program
+async function init() {
+    try {
+        const response = await promptUser();
+        const readMe = generateMarkdown(response);
+        await writeFileAsync("README.md", readMe);
+        console.log("Success!");
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 // function call to initialize program

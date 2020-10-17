@@ -20,4 +20,6 @@ This includes:
   * Tests
   * Questions
 
-# Links
+# Link to Video
+
+https://drive.google.com/file/d/1e00E6LRF3XW4lufle1exPT0nPDL28T3Y/view?usp=sharing

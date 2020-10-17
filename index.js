@@ -1,5 +1,5 @@
 //Declared Variables
-const fs = require("fs");
+const fs = require("fs"); 
 const inquirer = require("inquirer");
 const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
@@ -90,7 +90,7 @@ ${answers.Usage}
 ${answers.Contribution}
 
 ##Test:
-${answers.Test}
+${answers.Tests}
 
 ##License:
 ${answers.License}
